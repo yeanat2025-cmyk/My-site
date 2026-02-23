@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+<div class="box">
+  <h2>Signup</h2>
+
+  <!-- EMAIL SIGNUP -->
+  <input type="email" id="email" placeholder="Enter email">
+  <button type="button" onclick="sendCode()">Send OTP</button>
+
+  <div class="divider">OR</div>
+
+  <!-- GOOGLE SIGNUP -->
+  <button class="google" type="button" onclick="googleSignup()">
+    Continue with Google
+  </button>
+
+  <p class="login-link">
+    Already have an account? <a href="login.html">Login</a>
+  </p>
+</div>
+
+<!-- ================= EMAILJS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- ================= FIREBASE v8 ================= -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<!-- ================= CUSTOM JS ================= -->
+<script type="module" src="js/signup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Upload</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="box">
+    <h2>Upload Video</h2>
+
+    <input type="file" id="videoFile" accept="video/*">
+    <input type="text" id="caption" placeholder="Write caption">
+
+    <!-- JS handle করবে -->
+    <button id="uploadBtn">Upload Video</button>
+
+    <div class="progress-box">
+      <div class="progress-bar" id="progress" style="width:0%">0%</div>
+    </div>
+
+    <p id="status"></p>
+
+    <!-- Preview -->
+    <video id="preview" controls style="display:none; width:100%; margin-top:10px;"></video>
+  </div>
+
+  <!-- 🔥 Upload JS -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

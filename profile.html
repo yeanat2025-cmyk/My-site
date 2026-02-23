@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/common-header.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+<!-- ===== COMMON HEADER ===== -->
+<div id="header"></div>
+
+<!-- ========== BODY ========== -->
+<main class="content">
+
+  <!-- WALLET -->
+  <div class="wallet">
+    <div>
+      <h4>My Wallet</h4>
+      <p>৳ <span id="balance">0</span></p>
+    </div>
+    <button onclick="goBalance()">Withdraw</button>
+  </div>
+
+  <!-- INFO LIST -->
+  <div class="card">
+    <p><b>Name:</b> <span id="name2">---</span></p>
+    <p><b>Country:</b> <span id="country">---</span></p>
+    <p><b>Gender:</b> <span id="gender">---</span></p>
+    <p><b>Mobile:</b> <span id="mobile">---</span></p>
+  </div>
+
+  <!-- LINKS -->
+  <div class="links">
+    <a href="terms.html">📄 Terms & Conditions</a>
+    <a href="setting.html">⚙️ Settings</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="#" onclick="logout()" class="logout">🚪 Logout</a>
+  </div>
+
+</main>
+
+<!-- ===== FIREBASE ===== -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/header.js"></script>
+
+<!-- ===== PROFILE LOGIC ===== -->
+<script>
+  // 🔐 Protect profile page
+  firebase.auth().onAuthStateChanged(user => {
+    if (!user) {
+      // ❌ login নাই → login page
+      window.location.href = "login.html";
+    } else {
+      // ✅ login আছে → data load
+      loadProfile(user);
+    }
+  });
+
+  function loadProfile(user) {
+    firebase.firestore()
+      .collection("users")
+      .doc(user.uid)
+      .get()
+      .then(doc => {
+        if (!doc.exists) return;
+
+        const data = doc.data();
+
+        // Header
+        document.getElementById("name").innerText = data.name || "User";
+        document.getElementById("userId").innerText = user.uid.slice(0, 8);
+        document.getElementById("balance").innerText = data.balance || 0;
+
+        // Profile body
+        document.getElementById("name2").innerText = data.name || "---";
+        document.getElementById("country").innerText = data.country || "---";
+        document.getElementById("gender").innerText = data.gender || "---";
+        document.getElementById("mobile").innerText = data.mobile || "---";
+
+        if (data.photo) {
+          document.getElementById("photo").src = data.photo;
+        }
+      });
+  }
+
+  function goBalance() {
+    window.location.href = "balance.html";
+  }
+
+  function logout() {
+    firebase.auth().signOut().then(() => {
+      window.location.href = "login.html";
+    });
+  }
+</script>
+
+</body>
+</html>

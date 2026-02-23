@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/userform.css">
+</head>
+<body>
+
+<div class="box">
+  <h2>User Profile</h2>
+
+  <!-- Profile photo + User ID -->
+  <div class="avatar-box">
+    <img id="preview" src="assets/profile.png" class="avatar">
+    <p class="user-id">User ID: <b id="uidText"></b></p>
+  </div>
+
+  <input type="file" id="photo">
+
+  <input id="name" placeholder="Name">
+  <input id="mobile" placeholder="Mobile">
+
+  <select id="country">
+    <option>Bangladesh</option>
+    <option>India</option>
+    <option>USA</option>
+  </select>
+
+  <select id="gender">
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+
+  <input type="date" id="dob">
+
+  <button type="button" onclick="submitProfile()">
+    Submit
+  </button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/userform.js"></script>
+</body>
+</html>

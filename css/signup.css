@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.box {
+  background: #121212;
+  padding: 35px 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 380px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.box h2 {
+  margin-bottom: 25px;
+  color: #ff0050;
+  font-size: 28px;
+}
+
+.box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.box button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: none;
+  background: #ff0050;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.box button:hover {
+  background: #e60046;
+}
+
+.box button.google {
+  background: #4285f4;
+}
+
+.box button.google:hover {
+  background: #357ae8;
+}
+
+.divider {
+  margin: 15px 0;
+  color: #ffffffaa;
+  font-size: 14px;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ffffffaa;
+}
+
+.login-link a {
+  color: #ff0050;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .box {
+    padding: 30px 20px;
+  }
+
+  .box h2 {
+    font-size: 24px;
+  }
+
+  .box input,
+  .box button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .box {
+    padding: 25px 15px;
+  }
+
+  .box h2 {
+    font-size: 22px;
+  }
+
+  .box input,
+  .box button {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}

@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+main.content {
+  padding: 20px;
+  max-width: 480px;
+  margin: auto;
+}
+
+/* WALLET */
+.wallet {
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.wallet h4 {
+  margin: 0 0 5px 0;
+  color: #ff0050;
+}
+
+.wallet p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.wallet button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #ff0050;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.wallet button:hover {
+  background: #e60046;
+}
+
+/* INFO CARD */
+.card {
+  background: #1a1a1a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* LINKS */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #ff0050;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  display: block;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  background: #2a2a2a;
+}
+
+.links .logout {
+  background: #ff0050;
+  color: white;
+}
+
+.links .logout:hover {
+  background: #e60046;
+}
+
+@media screen and (max-width: 480px) {
+  main.content {
+    padding: 15px;
+  }
+  .wallet h4, .wallet p, .card p, .links a {
+    font-size: 14px;
+  }
+}

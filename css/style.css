@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+body {
+  background: #020617;
+  color: white;
+}
+
+/* Splash */
+.splash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash img {
+  width: 130px;
+  margin-bottom: 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  padding: 15px;
+}
+
+.profile {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.profile img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+/* Marquee */
+.marquee {
+  margin-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Slider */
+.slider {
+  margin: 15px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Center text */
+.center {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Bottom Nav */
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #020617;
+  display: flex;
+  border-top: 1px solid #1e293b;
+}
+
+nav button {
+  flex: 1;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
